@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Linker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="file:///C:/Users/Alhaan/Desktop/Coding/quality%20education%20project%202/icons8-dynamic-links-16.png">
+
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/collection/190727/1600x900');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white; /* Text color */
+            animation: fadeIn 1s ease; /* Animation effect */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        h1 {
+            font-size: 48px; /* Larger heading size */
+            font-weight: bold; /* Stronger font weight */
+        }
+        .container {
+            padding-top: 50px; /* Adjust top padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-control {
+            background-color: rgba(0, 0, 0, 0.5); /* Slightly darker background */
+            color: white; /* Text color */
+            width: 70%; /* Adjust width of search bar */
+            font-size: 18px; /* Adjust font size */
+        }
+        .btn-primary {
+            background-color: #007bff; /* Bootstrap primary color */
+            border-color: #007bff; /* Border color */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            border-color: #0056b3; /* Darker border color on hover */
+        }
+        #fact-container {
+            width: 50%; /* Half the size of the search bar */
+            margin-top: 20px; /* Adjust top margin */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            animation: slideDown 1s ease; /* Animation effect */
+        }
+        @keyframes slideDown {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ficon%2Fschool_10110870&psig=AOvVaw1DSLTW4ADOqR11XfP4cfaw&ust=1709922128720000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCODknO-s4oQDFQAAAAAdAAAAABAE" alt="">
+        <h1 class="mb-4">Edu Linker</h1>
+        <form action="/search" method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="topic" placeholder="Enter a topic" aria-label="Search" required>
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+        <div id="fact-container">
+            <h2>Today's Fact</h2>
+            <p id="fact-text">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        // Array of facts
+        var facts = [
+            "The Earth is approximately 4.5 billion years old.",
+            "The human brain has a storage capacity of about 2.5 petabytes.",
+            "The tallest mountain in the world is Mount Everest, measuring 29,032 feet.",
+            "The Great Wall of China is approximately 13,170 miles long."
+        ];
+
+        // Randomly select a fact
+        var randomFact = facts[Math.floor(Math.random() * facts.length)];
+
+        // Update the fact text
+        document.getElementById("fact-text").innerText = randomFact;
+    </script>
+</body>
+</html>
